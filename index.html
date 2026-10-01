@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- ======================================================
+       META & SEO
+       ====================================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>150 Receitas Fit | Emagreça com Sabor e Sem Sofrimento</title>
+  <meta name="description" content="Descubra 150 receitas fit deliciosas, práticas e aprovadas por nutricionistas. Emagreça com prazer, sem abrir mão do sabor. Acesso imediato por apenas R$ 37!" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="150 Receitas Fit | Emagreça com Sabor" />
+  <meta property="og:description" content="150 receitas saudáveis, gostosas e práticas para o seu dia a dia. Garanta agora por R$ 37!" />
+  <meta property="og:image" content="https://placehold.co/1200x630?text=150+Receitas+Fit" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange:  '#FF6B35',
+              coral:   '#FF8C61',
+              cream:   '#FFF8F0',
+              leaf:    '#4CAF50',
+              leafDark:'#388E3C',
+              dark:    '#1A1A1A',
+              muted:   '#5C5C5C',
+            }
+          },
+          fontFamily: {
+            heading: ['"Playfair Display"', 'serif'],
+            poppins: ['"Poppins"', 'sans-serif'],
+            body:    ['"Inter"', 'sans-serif'],
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%':      { transform: 'translateY(-14px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(255,107,53,0.55)' },
+              '50%':      { boxShadow: '0 0 0 18px rgba(255,107,53,0)' },
+            },
+            fadeUp: {
+              '0%':   { opacity: '0', transform: 'translateY(36px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            toastIn: {
+              '0%':   { opacity: '0', transform: 'translateX(-100%)' },
+              '100%': { opacity: '1', transform: 'translateX(0)' },
+            },
+            toastOut: {
+              '0%':   { opacity: '1', transform: 'translateX(0)' },
+              '100%': { opacity: '0', transform: 'translateX(-120%)' },
+            },
+          },
+          animation: {
+            float:       'float 4s ease-in-out infinite',
+            pulseGlow:   'pulseGlow 2s ease-in-out infinite',
+            fadeUp:      'fadeUp 0.6s ease forwards',
+            toastIn:     'toastIn 0.4s ease forwards',
+            toastOut:    'toastOut 0.4s ease forwards',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FFF8F0;
+      color: #1A1A1A;
+      overflow-x: hidden;
+    }
+    html { scroll-behavior: smooth; }
+    :focus-visible {
+      outline: 3px solid #FF6B35;
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+    }
+    .stagger-1 { transition-delay: 0.08s; }
+    .stagger-2 { transition-delay: 0.18s; }
+    .stagger-3 { transition-delay: 0.28s; }
+    .stagger-4 { transition-delay: 0.38s; }
+    .stagger-5 { transition-delay: 0.48s; }
+    .stagger-6 { transition-delay: 0.58s; }
+    /* CTA button */
+    .btn-cta {
+      animation: pulseGlow 2s ease-in-out infinite;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .btn-cta:hover  { transform: scale(1.04); filter: brightness(1.08); }
+    .btn-cta:active { transform: scale(0.97); }
+    @media (prefers-reduced-motion: reduce) { .btn-cta { animation: none; } }
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255,255,255,0.22);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    /* FAQ */
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-body.open { max-height: 400px; }
+    .faq-icon { transition: transform 0.35s ease; }
+    .faq-icon.rotated { transform: rotate(45deg); }
+    /* Carousel */
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-card {
+      flex: 0 0 min(85vw, 300px);
+      scroll-snap-align: center;
+    }
+    /* Offer card gradient border */
+    .offer-card {
+      position: relative;
+      border-radius: 1.5rem;
+      padding: 3px;
+      background: linear-gradient(135deg, #FF6B35, #FFD700, #FF6B35);
+    }
+    .offer-card-inner {
+      border-radius: calc(1.5rem - 3px);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 80px;
+      left: 16px;
+      z-index: 9999;
+      max-width: 310px;
+      width: calc(100vw - 32px);
+    }
+    @media (min-width: 768px) {
+      #toast { bottom: 28px; max-width: 340px; width: auto; }
+    }
+    /* Blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Stars */
+    .stars::before {
+      content: 'star star star star star';
+      content: '★★★★★';
+      color: #F59E0B;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+    .price-old {
+      text-decoration: line-through;
+      color: #9CA3AF;
+    }
+    .product-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(255,107,53,0.18);
+    }
+    :root { --banner-h: 56px; }
+    body  { padding-top: var(--banner-h); }
+  </style>
+</head>
+<body class="font-body">
+
+  <!-- ============================================================
+       1. BANNER FIXO DE URGÊNCIA
+       ============================================================ -->
+  <div id="urgency-banner"
+       class="fixed top-0 left-0 right-0 z-50
+              bg-gradient-to-r from-orange-600/90 to-red-600/90
+              backdrop-blur-md border-b border-white/20
+              text-white text-center py-2 px-4 shadow-lg">
+    <p class="text-sm sm:text-base font-semibold font-poppins leading-tight">
+      🔥 Oferta especial termina em:
+      <span id="countdown" class="font-bold text-yellow-300 ml-1">00:14:59</span>
+      &nbsp;•&nbsp; Restam apenas
+      <span id="vagas" class="font-bold text-yellow-300">17</span> vagas com desconto
+    </p>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         2. HERO / HEADER
+         ============================================================ -->
+    <header class="relative overflow-hidden min-h-screen flex items-center"
+            style="background: linear-gradient(135deg, #FFF8F0 0%, #FFE4CC 50%, #FFF0E6 100%)">
+      <div class="blob w-96 h-96 bg-orange-400 top-0 left-0" style="top:-80px;left:-80px"></div>
+      <div class="blob w-80 h-80 bg-yellow-300" style="top:50%;right:-60px"></div>
+      <div class="blob w-64 h-64 bg-green-300" style="bottom:-40px;left:33%"></div>
+
+      <div class="relative z-10 container mx-auto px-5 py-16 lg:py-24 max-w-6xl">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+
+          <!-- Texto -->
+          <div class="flex-1 text-center lg:text-left reveal">
+            <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-5 shadow-md">
+              <span class="text-green-600 font-semibold text-sm">✅ Mais de 12.000 mulheres já transformaram sua alimentação</span>
+            </div>
+
+            <!-- EDITE O TÍTULO PRINCIPAL AQUI -->
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-5" style="color:#1A1A1A">
+              Emagreça com
+              <span style="color:#FF6B35">Sabor</span><br />
+              sem abrir mão<br class="hidden sm:block" /> do prazer de comer
+            </h1>
+
+            <!-- EDITE O SUBTÍTULO AQUI -->
+            <p class="text-lg sm:text-xl mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed" style="color:#5C5C5C">
+              O <strong style="color:#1A1A1A">Livro Digital 150 Receitas Fit</strong> é o seu guia completo para
+              comer bem, perder peso e ainda ter energia para tudo — tudo isso na palma da sua mão! 🥗
+            </p>
+
+            <!-- Selos de confiança -->
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+              <div class="glass flex items-center gap-1.5 rounded-xl px-3 py-2 shadow text-sm font-medium">⚡ Acesso imediato</div>
+              <div class="glass flex items-center gap-1.5 rounded-xl px-3 py-2 shadow text-sm font-medium">🛡️ Garantia de 7 dias</div>
+              <div class="glass flex items-center gap-1.5 rounded-xl px-3 py-2 shadow text-sm font-medium">🔒 Pagamento 100% seguro</div>
+            </div>
+
+            <!-- CTA Hero -->
+            <a href="#oferta" id="cta-hero"
+               class="btn-cta inline-flex items-center justify-center gap-2
+                      text-white font-poppins font-bold text-lg sm:text-xl
+                      rounded-2xl px-8 py-5 shadow-2xl min-h-[56px] w-full sm:w-auto"
+               style="background:#FF6B35">
+              🍽️ QUERO ACESSAR AS RECEITAS AGORA
+            </a>
+
+            <p class="mt-4 text-sm" style="color:#5C5C5C">
+              De <span class="price-old font-semibold">R$ 97</span>
+              por apenas <strong style="color:#FF6B35;font-size:1.125rem">R$ 37</strong>
+              — pagamento único, acesso vitalício
+            </p>
+          </div>
+
+          <!-- Imagem do produto — TROQUE O src AQUI -->
+          <div class="flex-1 flex justify-center reveal stagger-2">
+            <img src="https://placehold.co/560x560/FF6B35/FFFFFF?text=150+Receitas+Fit"
+                 alt="Mockup do Livro Digital 150 Receitas Fit exibido em celular ao lado de pratos coloridos saudáveis"
+                 width="560" height="560"
+                 class="animate-float w-full max-w-xs sm:max-w-sm lg:max-w-md rounded-3xl shadow-2xl object-cover" />
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         3. BOTÃO "VER O QUE VOCÊ VAI RECEBER"
+         ============================================================ -->
+    <section class="bg-white py-10 px-5">
+      <div class="max-w-xl mx-auto text-center reveal">
+        <p class="mb-4 text-base" style="color:#5C5C5C">Quer conhecer tudo que está incluso antes de decidir?</p>
+        <a href="#como-funciona"
+           class="inline-flex items-center justify-center gap-2
+                  font-poppins font-semibold text-base rounded-2xl
+                  px-7 py-4 min-h-[52px] transition-colors duration-200 shadow"
+           style="border:2px solid #FF6B35;color:#FF6B35;"
+           onmouseover="this.style.background='#FF6B35';this.style.color='white'"
+           onmouseout="this.style.background='';this.style.color='#FF6B35'">
+          👀 Ver o que você vai receber
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. COMO É O PRODUTO
+         ============================================================ -->
+    <section id="como-funciona" class="relative overflow-hidden py-20 px-5">
+      <div class="blob w-80 h-80 bg-orange-200" style="top:0;right:0;opacity:0.4"></div>
+      <div class="blob w-64 h-64 bg-green-200" style="bottom:0;left:0;opacity:0.3"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="text-white font-poppins font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3 inline-block"
+                style="background:linear-gradient(135deg,#4CAF50,#66BB6A)">O produto</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-black mt-2" style="color:#1A1A1A">
+            Tudo que você recebe no
+            <span style="color:#FF6B35">Livro Digital</span>
+          </h2>
+          <p class="mt-3 max-w-xl mx-auto" style="color:#5C5C5C">
+            Um material completo, prático e pensado especialmente para mulheres que querem comer bem sem complicação.
+          </p>
+        </div>
+
+        <!-- Cards de características -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div class="product-card glass rounded-3xl p-6 shadow-xl text-center reveal stagger-1">
+            <div class="text-5xl mb-4">📖</div>
+            <h3 class="font-poppins font-bold text-xl mb-2" style="color:#1A1A1A">150 Receitas</h3>
+            <p class="text-sm leading-relaxed" style="color:#5C5C5C">Café da manhã, almoço, jantar, lanches e sobremesas saudáveis para a semana toda.</p>
+          </div>
+          <div class="product-card glass rounded-3xl p-6 shadow-xl text-center reveal stagger-2">
+            <div class="text-5xl mb-4">📱</div>
+            <h3 class="font-poppins font-bold text-xl mb-2" style="color:#1A1A1A">Acesso pelo Celular</h3>
+            <p class="text-sm leading-relaxed" style="color:#5C5C5C">Formato PDF e link online. Abre em qualquer celular, tablet ou computador, sem app.</p>
+          </div>
+          <div class="product-card glass rounded-3xl p-6 shadow-xl text-center reveal stagger-3">
+            <div class="text-5xl mb-4">🥦</div>
+            <h3 class="font-poppins font-bold text-xl mb-2" style="color:#1A1A1A">Passo a Passo</h3>
+            <p class="text-sm leading-relaxed" style="color:#5C5C5C">Cada receita com ingredientes, modo de preparo simples e dicas de substituição.</p>
+          </div>
+          <div class="product-card glass rounded-3xl p-6 shadow-xl text-center reveal stagger-4">
+            <div class="text-5xl mb-4">📊</div>
+            <h3 class="font-poppins font-bold text-xl mb-2" style="color:#1A1A1A">Info Nutricional</h3>
+            <p class="text-sm leading-relaxed" style="color:#5C5C5C">Calorias, proteínas, carboidratos e gorduras de cada prato. Controle fácil da dieta.</p>
+          </div>
+        </div>
+
+        <!-- 3 passos -->
+        <div class="glass rounded-3xl p-8 shadow-xl reveal">
+          <h3 class="font-poppins font-bold text-2xl text-center mb-8" style="color:#1A1A1A">📦 Como você recebe seu material</h3>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-4">
+
+            <div class="flex flex-col items-center text-center" style="max-width:200px">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center text-white font-poppins font-black text-xl shadow-lg mb-3"
+                   style="background:#FF6B35">1</div>
+              <h4 class="font-poppins font-semibold mb-1" style="color:#1A1A1A">Você compra</h4>
+              <p class="text-sm" style="color:#5C5C5C">Clique no botão e faça o pagamento de forma segura</p>
+            </div>
+
+            <div class="font-bold text-3xl hidden sm:block" style="color:#FF6B35">→</div>
+            <div class="font-bold text-3xl sm:hidden" style="color:#FF6B35">↓</div>
+
+            <div class="flex flex-col items-center text-center" style="max-width:200px">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center text-white font-poppins font-black text-xl shadow-lg mb-3"
+                   style="background:#FF6B35">2</div>
+              <h4 class="font-poppins font-semibold mb-1" style="color:#1A1A1A">Recebe por e-mail</h4>
+              <p class="text-sm" style="color:#5C5C5C">Você recebe o link de acesso imediatamente no e-mail</p>
+            </div>
+
+            <div class="font-bold text-3xl hidden sm:block" style="color:#FF6B35">→</div>
+            <div class="font-bold text-3xl sm:hidden" style="color:#FF6B35">↓</div>
+
+            <div class="flex flex-col items-center text-center" style="max-width:200px">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center text-white font-poppins font-black text-xl shadow-lg mb-3"
+                   style="background:#4CAF50">3</div>
+              <h4 class="font-poppins font-semibold mb-1" style="color:#1A1A1A">Começa a cozinhar!</h4>
+              <p class="text-sm" style="color:#5C5C5C">Acesse agora e comece sua transformação hoje mesmo</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. BÔNUS
+         ============================================================ -->
+    <section class="relative overflow-hidden bg-white py-20 px-5">
+      <div class="blob w-96 h-96 bg-yellow-200" style="top:0;left:25%;opacity:0.3"></div>
+      <div class="blob w-64 h-64 bg-orange-200" style="bottom:0;right:0;opacity:0.3"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <span class="inline-block text-white font-poppins font-bold text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-3"
+                style="background:#FF6B35">🎁 Bônus exclusivos</span>
+          <h2 class="font-heading text-3xl sm:text-4xl font-black mt-2" style="color:#1A1A1A">
+            Você também recebe <span style="color:#FF6B35">GRÁTIS</span>
+          </h2>
+          <p class="mt-3" style="color:#5C5C5C">Bônus especiais que valem mais do que o produto em si!</p>
+        </div>
+
+        <!-- EDITE OS BÔNUS AQUI -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+          <div class="product-card rounded-3xl overflow-hidden shadow-xl bg-white reveal stagger-1" style="border:1px solid rgba(255,255,255,0.6)">
+            <img src="https://placehold.co/400x200/4CAF50/FFFFFF?text=Plano+7+Dias"
+                 alt="Bônus: Plano alimentar de 7 dias" loading="lazy" class="w-full object-cover" style="height:144px" />
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-white font-poppins font-bold text-xs px-3 py-1 rounded-full" style="background:#4CAF50">GRÁTIS</span>
+                <span class="price-old text-sm">R$ 47</span>
+              </div>
+              <h4 class="font-poppins font-bold text-base mb-1" style="color:#1A1A1A">Plano Alimentar 7 Dias</h4>
+              <p class="text-sm" style="color:#5C5C5C">Cardápio completo e equilibrado para a primeira semana. Sem precisar pensar no que cozinhar.</p>
+            </div>
+          </div>
+
+          <div class="product-card rounded-3xl overflow-hidden shadow-xl bg-white reveal stagger-2" style="border:1px solid rgba(255,255,255,0.6)">
+            <img src="https://placehold.co/400x200/FF6B35/FFFFFF?text=Lista+de+Compras"
+                 alt="Bônus: Lista de compras inteligente" loading="lazy" class="w-full object-cover" style="height:144px" />
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-white font-poppins font-bold text-xs px-3 py-1 rounded-full" style="background:#4CAF50">GRÁTIS</span>
+                <span class="price-old text-sm">R$ 27</span>
+              </div>
+              <h4 class="font-poppins font-bold text-base mb-1" style="color:#1A1A1A">Lista de Compras Inteligente</h4>
+              <p class="text-sm" style="color:#5C5C5C">Lista semanal organizada por seção do mercado para economizar tempo e dinheiro.</p>
+            </div>
+          </div>
+
+          <div class="product-card rounded-3xl overflow-hidden shadow-xl bg-white reveal stagger-3" style="border:1px solid rgba(255,255,255,0.6)">
+            <img src="https://placehold.co/400x200/FFD700/333333?text=Doces+Fit"
+                 alt="Bônus: Mini receituário de doces fit" loading="lazy" class="w-full object-cover" style="height:144px" />
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-white font-poppins font-bold text-xs px-3 py-1 rounded-full" style="background:#4CAF50">GRÁTIS</span>
+                <span class="price-old text-sm">R$ 37</span>
+              </div>
+              <h4 class="font-poppins font-bold text-base mb-1" style="color:#1A1A1A">Mini Livro de Doces Fit</h4>
+              <p class="text-sm" style="color:#5C5C5C">20 sobremesas saudáveis e incríveis para você não sofrer na dieta.</p>
+            </div>
+          </div>
+
+          <div class="product-card rounded-3xl overflow-hidden shadow-xl bg-white reveal stagger-4" style="border:1px solid rgba(255,255,255,0.6)">
+            <img src="https://placehold.co/400x200/FF8C61/FFFFFF?text=Grupo+VIP"
+                 alt="Bônus: Acesso ao grupo VIP" loading="lazy" class="w-full object-cover" style="height:144px" />
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-white font-poppins font-bold text-xs px-3 py-1 rounded-full" style="background:#4CAF50">GRÁTIS</span>
+                <span class="price-old text-sm">R$ 97</span>
+              </div>
+              <h4 class="font-poppins font-bold text-base mb-1" style="color:#1A1A1A">Acesso ao Grupo VIP</h4>
+              <p class="text-sm" style="color:#5C5C5C">Grupo exclusivo para tirar dúvidas, compartilhar resultados e se motivar com a comunidade.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Total bônus -->
+        <div class="glass rounded-2xl px-6 py-5 text-center shadow-xl max-w-md mx-auto reveal">
+          <p class="text-sm mb-1" style="color:#5C5C5C">Valor total dos bônus</p>
+          <p class="font-poppins font-black text-3xl" style="color:#1A1A1A">
+            <span class="price-old text-xl">R$ 208</span>
+            → <span style="color:#4CAF50">Tudo GRÁTIS para você!</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. DEPOIMENTOS
+         ============================================================ -->
+    <section class="relative overflow-hidden py-20 px-5">
+      <div class="blob w-96 h-96 bg-orange-300" style="top:0;right:0;opacity:0.25"></div>
+      <div class="blob w-80 h-80 bg-green-200" style="bottom:0;left:0;opacity:0.25"></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto">
+        <div class="text-center mb-10 reveal">
+          <h2 class="font-heading text-3xl sm:text-4xl font-black" style="color:#1A1A1A">
+            O que as mulheres estão <span style="color:#FF6B35">dizendo</span>
+          </h2>
+          <p class="mt-3" style="color:#5C5C5C">Resultados reais de pessoas reais ❤️</p>
+        </div>
+
+        <!-- Mobile: carousel -->
+        <!-- EDITE OS DEPOIMENTOS AQUI -->
+        <div class="lg:hidden reveal">
+          <div class="carousel-track py-4 px-2">
+            <div class="carousel-card glass rounded-3xl p-5 shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://placehold.co/48x48/FF6B35/FFFFFF?text=M" alt="Foto de Maria Silva" loading="lazy"
+                     class="w-12 h-12 rounded-full object-cover" style="border:2px solid #FF6B35" />
+                <div>
+                  <p class="font-poppins font-semibold text-sm" style="color:#1A1A1A">Maria Silva</p>
+                  <p class="text-xs" style="color:#5C5C5C">São Paulo, SP</p>
+                </div>
+              </div>
+              <div class="stars mb-2"></div>
+              <p class="text-sm leading-relaxed" style="color:#5C5C5C">"Perdi 6 kg em 2 meses seguindo as receitas! Nunca imaginei que comer saudável fosse tão gostoso. A lista de compras foi um diferencial incrível!"</p>
+            </div>
+            <div class="carousel-card glass rounded-3xl p-5 shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://placehold.co/48x48/FF8C61/FFFFFF?text=A" alt="Foto de Ana Paula" loading="lazy"
+                     class="w-12 h-12 rounded-full object-cover" style="border:2px solid #FF8C61" />
+                <div>
+                  <p class="font-poppins font-semibold text-sm" style="color:#1A1A1A">Ana Paula Ferreira</p>
+                  <p class="text-xs" style="color:#5C5C5C">Rio de Janeiro, RJ</p>
+                </div>
+              </div>
+              <div class="stars mb-2"></div>
+              <p class="text-sm leading-relaxed" style="color:#5C5C5C">"Comprei sem expectativa e fui surpreendida! As receitas são simples, o passo a passo é super claro e até meu marido amou. Vale cada centavo!"</p>
+            </div>
+            <div class="carousel-card glass rounded-3xl p-5 shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://placehold.co/48x48/4CAF50/FFFFFF?text=J" alt="Foto de Juliana Mendes" loading="lazy"
+                     class="w-12 h-12 rounded-full object-cover" style="border:2px solid #4CAF50" />
+                <div>
+                  <p class="font-poppins font-semibold text-sm" style="color:#1A1A1A">Juliana Mendes</p>
+                  <p class="text-xs" style="color:#5C5C5C">Belo Horizonte, MG</p>
+                </div>
+              </div>
+              <div class="stars mb-2"></div>
+              <p class="text-sm leading-relaxed" style="color:#5C5C5C">"Uso todos os dias no meu celular. As receitas fit viraram rotina aqui em casa. Minhas filhas adoram os lanchinhos saudáveis 😍"</p>
+            </div>
+            <div class="carousel-card glass rounded-3xl p-5 shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://placehold.co/48x48/FFD700/333333?text=F" alt="Foto de Fernanda Costa" loading="lazy"
+                     class="w-12 h-12 rounded-full object-cover" style="border:2px solid #FFD700" />
+                <div>
+                  <p class="font-poppins font-semibold text-sm" style="color:#1A1A1A">Fernanda Costa</p>
+                  <p class="text-xs" style="color:#5C5C5C">Curitiba, PR</p>
+                </div>
+              </div>
+              <div class="stars mb-2"></div>
+              <p class="text-sm leading-relaxed" style="color:#5C5C5C">"Finalmente parei de ficar sem ideia na hora de cozinhar. São 150 opções incríveis! O bônus do Plano 7 Dias salvou minha semana."</p>
+            </div>
+            <div class="carousel-card glass rounded-3xl p-5 shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://placehold.co/48x48/E91E63/FFFFFF?text=C" alt="Foto de Camila Rocha" loading="lazy"
+                     class="w-12 h-12 rounded-full object-cover" style="border:2px solid #E91E63" />
+                <div>
+                  <p class="font-poppins font-semibold text-sm" style="color:#1A1A1A">Camila Rocha</p>
+                  <p class="text-xs" style="color:#5C5C5C">Porto Alegre, RS</p>
+                </div>
+              </div>
+              <div class="stars mb-2"></div>
+              <p class="text-sm leading-relaxed" style="color:#5C5C5C">"Excelente custo-benefício! São muitas receitas, todas testadas e com tabela nutricional. Me ajudou a atingir minha meta de perda de peso."</p>
+            </div>
+            <div class="carousel-card glass rounded-3xl p-5 shadow-xl">
+              <div class="flex items-center gap-3 mb-3">
+                <img src="https://placehold.co/48x48/9C27B0/FFFFFF?text=B" alt="Foto de Beatriz Alves" loading="lazy"
+                     class="w-12 h-12 rounded-full object-cover" style="border:2px solid #9C27B0" />
+                <div>
+                  <p class="font-poppins font-semibold text-sm" style="color:#1A1A1A">Beatriz Alves</p>
+                  <p class="text-xs" style="color:#5C5C5C">Fortaleza, CE</p>
+                </div>
+              </div>
+              <div class="stars mb-2"></div>
+              <p class="text-sm leading-relaxed" style="color:#5C5C5C">"Sou iniciante na cozinha e consegui fazer todas as receitas! Super fácil, com ingredientes simples e resultado delicioso 🥰"</p>
+            </div>
+          </div>
+          <p class="text-center text-xs mt-2 opacity-60" style="color:#5C5C5C">← deslize para ver mais →</p>
+        </div>
+
+        <!-- Desktop: grid -->
+        <div class="hidden lg:grid grid-cols-3 gap-6">
+          <div class="glass rounded-3xl p-6 shadow-xl reveal stagger-1">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://placehold.co/56x56/FF6B35/FFFFFF?text=M" alt="Foto de Maria Silva" loading="lazy"
+                   class="w-14 h-14 rounded-full object-cover" style="border:2px solid #FF6B35" />
+              <div><p class="font-poppins font-semibold" style="color:#1A1A1A">Maria Silva</p><p class="text-xs" style="color:#5C5C5C">São Paulo, SP</p></div>
+            </div>
+            <div class="stars mb-3"></div>
+            <p class="leading-relaxed" style="color:#5C5C5C">"Perdi 6 kg em 2 meses seguindo as receitas! Nunca imaginei que comer saudável fosse tão gostoso. A lista de compras foi um diferencial incrível!"</p>
+          </div>
+          <div class="glass rounded-3xl p-6 shadow-xl reveal stagger-2">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://placehold.co/56x56/FF8C61/FFFFFF?text=A" alt="Foto de Ana Paula Ferreira" loading="lazy"
+                   class="w-14 h-14 rounded-full object-cover" style="border:2px solid #FF8C61" />
+              <div><p class="font-poppins font-semibold" style="color:#1A1A1A">Ana Paula Ferreira</p><p class="text-xs" style="color:#5C5C5C">Rio de Janeiro, RJ</p></div>
+            </div>
+            <div class="stars mb-3"></div>
+            <p class="leading-relaxed" style="color:#5C5C5C">"Comprei sem expectativa e fui surpreendida! As receitas são simples, o passo a passo é super claro e até meu marido amou. Vale cada centavo!"</p>
+          </div>
+          <div class="glass rounded-3xl p-6 shadow-xl reveal stagger-3">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://placehold.co/56x56/4CAF50/FFFFFF?text=J" alt="Foto de Juliana Mendes" loading="lazy"
+                   class="w-14 h-14 rounded-full object-cover" style="border:2px solid #4CAF50" />
+              <div><p class="font-poppins font-semibold" style="color:#1A1A1A">Juliana Mendes</p><p class="text-xs" style="color:#5C5C5C">Belo Horizonte, MG</p></div>
+            </div>
+            <div class="stars mb-3"></div>
+            <p class="leading-relaxed" style="color:#5C5C5C">"Uso todos os dias no meu celular. As receitas fit viraram rotina aqui em casa. Minhas filhas adoram os lanchinhos saudáveis 😍"</p>
+          </div>
+          <div class="glass rounded-3xl p-6 shadow-xl reveal stagger-4">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://placehold.co/56x56/FFD700/333333?text=F" alt="Foto de Fernanda Costa" loading="lazy"
+                   class="w-14 h-14 rounded-full object-cover" style="border:2px solid #FFD700" />
+              <div><p class="font-poppins font-semibold" style="color:#1A1A1A">Fernanda Costa</p><p class="text-xs" style="color:#5C5C5C">Curitiba, PR</p></div>
+            </div>
+            <div class="stars mb-3"></div>
+            <p class="leading-relaxed" style="color:#5C5C5C">"Finalmente parei de ficar sem ideia na hora de cozinhar. São 150 opções incríveis! O bônus do Plano 7 Dias salvou minha semana."</p>
+          </div>
+          <div class="glass rounded-3xl p-6 shadow-xl reveal stagger-5">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://placehold.co/56x56/E91E63/FFFFFF?text=C" alt="Foto de Camila Rocha" loading="lazy"
+                   class="w-14 h-14 rounded-full object-cover" style="border:2px solid #E91E63" />
+              <div><p class="font-poppins font-semibold" style="color:#1A1A1A">Camila Rocha</p><p class="text-xs" style="color:#5C5C5C">Porto Alegre, RS</p></div>
+            </div>
+            <div class="stars mb-3"></div>
+            <p class="leading-relaxed" style="color:#5C5C5C">"Excelente custo-benefício! São muitas receitas, todas testadas e com tabela nutricional. Me ajudou a atingir minha meta de perda de peso."</p>
+          </div>
+          <div class="glass rounded-3xl p-6 shadow-xl reveal stagger-6">
+            <div class="flex items-center gap-3 mb-3">
+              <img src="https://placehold.co/56x56/9C27B0/FFFFFF?text=B" alt="Foto de Beatriz Alves" loading="lazy"
+                   class="w-14 h-14 rounded-full object-cover" style="border:2px solid #9C27B0" />
+              <div><p class="font-poppins font-semibold" style="color:#1A1A1A">Beatriz Alves</p><p class="text-xs" style="color:#5C5C5C">Fortaleza, CE</p></div>
+            </div>
+            <div class="stars mb-3"></div>
+            <p class="leading-relaxed" style="color:#5C5C5C">"Sou iniciante na cozinha e consegui fazer todas as receitas! Super fácil, com ingredientes simples e resultado delicioso 🥰"</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. ÁREA DE OFERTA — #oferta
+         ============================================================ -->
+    <section id="oferta" class="relative overflow-hidden py-20 px-5"
+             style="background:linear-gradient(135deg,#FFF8F0,#FFE4CC)">
+      <div class="blob" style="width:500px;height:500px;background:#FF6B35;top:-100px;left:-100px;opacity:0.2"></div>
+      <div class="blob" style="width:400px;height:400px;background:#FFD700;bottom:-80px;right:-80px;opacity:0.2"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <div class="text-center mb-8 reveal">
+          <h2 class="font-heading text-3xl sm:text-4xl font-black" style="color:#1A1A1A">
+            Garanta agora com <span style="color:#FF6B35">desconto especial</span>
+          </h2>
+        </div>
+
+        <div class="offer-card reveal shadow-2xl">
+          <div class="offer-card-inner p-8">
+
+            <div class="text-center mb-6">
+              <span class="inline-block text-white font-poppins font-black text-sm px-5 py-2 rounded-full shadow-lg uppercase tracking-wider"
+                    style="background:linear-gradient(135deg,#FF6B35,#FFD700)">
+                🏆 Mais Vendido
+              </span>
+            </div>
+
+            <!-- TROQUE A IMAGEM DO PRODUTO AQUI -->
+            <div class="flex justify-center mb-6">
+              <img src="https://placehold.co/280x280/FF6B35/FFFFFF?text=150+Receitas+Fit"
+                   alt="Capa do Livro Digital 150 Receitas Fit"
+                   loading="lazy"
+                   class="w-52 h-52 object-cover rounded-2xl shadow-xl" />
+            </div>
+
+            <!-- Checklist -->
+            <ul class="space-y-2 mb-8" style="color:#1A1A1A">
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span><strong>150 Receitas Fit</strong> — café da manhã ao jantar</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span>Tabela nutricional de cada receita</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span>Acesso vitalício em celular, tablet e PC</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span>🎁 <strong>Bônus:</strong> Plano Alimentar 7 Dias <span class="price-old text-xs">R$ 47</span></span>
+              </li>
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span>🎁 <strong>Bônus:</strong> Lista de Compras Inteligente <span class="price-old text-xs">R$ 27</span></span>
+              </li>
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span>🎁 <strong>Bônus:</strong> Mini Livro de Doces Fit <span class="price-old text-xs">R$ 37</span></span>
+              </li>
+              <li class="flex items-start gap-2 text-sm sm:text-base">
+                <span style="color:#4CAF50;font-weight:700;margin-top:2px">✔</span>
+                <span>🎁 <strong>Bônus:</strong> Acesso ao Grupo VIP <span class="price-old text-xs">R$ 97</span></span>
+              </li>
+            </ul>
+
+            <!-- Preços — EDITE AQUI -->
+            <div class="text-center mb-6">
+              <p class="text-sm mb-1" style="color:#5C5C5C">Valor total: <span class="price-old">R$ 305</span></p>
+              <p class="font-poppins text-sm mb-1" style="color:#5C5C5C">De <span class="price-old font-bold text-xl">R$ 97</span> por apenas</p>
+              <p class="font-poppins font-black text-5xl" style="color:#FF6B35">R$ 37</p>
+              <p class="text-sm mt-1" style="color:#5C5C5C">ou 12x de <strong style="color:#1A1A1A">R$ 3,57</strong> no cartão</p>
+            </div>
+
+            <!-- CTA de oferta -->
+            <a href="#" id="cta-oferta"
+               class="btn-cta flex items-center justify-center gap-2
+                      text-white font-poppins font-black text-xl
+                      rounded-2xl px-6 py-5 shadow-2xl w-full min-h-[60px]"
+               style="background:#FF6B35">
+              🔒 QUERO COMPRAR AGORA POR R$ 37
+            </a>
+
+            <!-- Garantia -->
+            <div class="flex items-center gap-4 mt-6 p-4 rounded-2xl" style="background:#F0FFF4;border:1px solid #C6F6D5">
+              <div class="text-4xl flex-shrink-0">🛡️</div>
+              <div>
+                <p class="font-poppins font-bold text-sm" style="color:#276749">Garantia de 7 dias sem risco</p>
+                <p class="text-xs leading-relaxed" style="color:#276749">Se em 7 dias você não estiver satisfeita, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+              </div>
+            </div>
+
+            <!-- Countdown repetido -->
+            <div class="text-center mt-5">
+              <p class="text-sm font-semibold" style="color:#5C5C5C">
+                ⏰ Oferta expira em:
+                <span id="countdown2" class="font-bold" style="color:#FF6B35">00:14:59</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. NOTIFICAÇÕES DE VENDA (TOAST)
+         ============================================================ -->
+    <div id="toast" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- ============================================================
+         9. FAQ
+         ============================================================ -->
+    <section class="relative overflow-hidden bg-white py-20 px-5">
+      <div class="blob w-80 h-80 bg-orange-100" style="top:0;right:0;opacity:0.5"></div>
+
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <div class="text-center mb-10 reveal">
+          <h2 class="font-heading text-3xl sm:text-4xl font-black" style="color:#1A1A1A">
+            Dúvidas <span style="color:#FF6B35">frequentes</span>
+          </h2>
+        </div>
+
+        <!-- EDITE AS PERGUNTAS DO FAQ AQUI -->
+        <div class="space-y-4" id="faq-container">
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Como recebo o produto após a compra?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Imediatamente após o pagamento aprovado, você recebe um e-mail com o link de acesso ao material. O PDF pode ser baixado ou acessado diretamente pelo navegador.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal stagger-1">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Serve para quem nunca cozinhou antes?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Sim! Todas as receitas foram criadas com passo a passo simples e ingredientes fáceis de encontrar. Mesmo quem nunca cozinhou consegue preparar os pratos sem dificuldade.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal stagger-2">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Preciso de equipamentos especiais ou airfryer?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Não! A grande maioria das receitas usa apenas utensílios comuns de cozinha. Há algumas receitas adaptadas para airfryer, mas todas têm versão para fogão convencional.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal stagger-3">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Por quanto tempo terei acesso?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">O acesso é vitalício! Você baixa o PDF uma única vez e pode guardar para sempre no seu celular, tablet ou computador, sem depender de internet depois.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal stagger-4">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Como funciona a garantia de 7 dias?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Se por qualquer motivo você não ficar satisfeita nos primeiros 7 dias após a compra, basta enviar um e-mail solicitando o reembolso e devolveremos 100% do valor pago. Sem perguntas, sem burocracia.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal stagger-5">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Quais são as formas de pagamento?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Aceitamos cartão de crédito (até 12x), boleto bancário e PIX. O pagamento é processado por uma plataforma 100% segura com criptografia SSL.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal stagger-6">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>O material funciona no celular?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Sim! O PDF é 100% compatível com celular Android e iPhone. Você pode até abrir no Google Drive ou iBooks para facilitar a leitura. Ideal para consultar enquanto cozinha.</div>
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl shadow-md overflow-hidden reveal">
+            <button class="faq-btn w-full text-left flex items-center justify-between gap-4 px-5 py-4 font-poppins font-semibold transition-colors"
+                    style="color:#1A1A1A" aria-expanded="false">
+              <span>Tenho suporte se tiver dúvidas?</span>
+              <span class="faq-icon flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xl leading-none font-bold"
+                    style="background:rgba(255,107,53,0.15);color:#FF6B35">+</span>
+            </button>
+            <div class="faq-body px-5 text-sm leading-relaxed" style="color:#5C5C5C">
+              <div class="pb-4">Claro! Você tem acesso ao grupo VIP (bônus incluso) onde tiramos dúvidas, e também pode entrar em contato pelo e-mail suporte@150receitasfit.com.br.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA final -->
+        <div class="text-center mt-12 reveal">
+          <p class="mb-4" style="color:#5C5C5C">Ainda com dúvidas? A melhor forma de descobrir é experimentar com garantia!</p>
+          <a href="#oferta"
+             class="btn-cta inline-flex items-center justify-center gap-2
+                    text-white font-poppins font-bold text-lg
+                    rounded-2xl px-8 py-5 shadow-2xl min-h-[56px]"
+             style="background:#FF6B35">
+            🍽️ QUERO ACESSAR AGORA
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       10. RODAPÉ
+       ============================================================ -->
+  <footer class="py-10 px-5" style="background:#1A1A1A;color:white">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- EDITE O NOME DO NEGÓCIO AQUI -->
+      <p class="font-poppins font-bold text-xl mb-2">150 Receitas Fit</p>
+      <div class="flex justify-center gap-4 mb-4 text-sm" style="color:#9CA3AF">
+        <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+        <span>•</span>
+        <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+        <span>•</span>
+        <!-- EDITE O EMAIL AQUI -->
+        <a href="mailto:suporte@150receitasfit.com.br" class="hover:text-white transition-colors">Suporte</a>
+      </div>
+      <p class="text-xs max-w-xl mx-auto leading-relaxed" style="color:#6B7280">
+        Este produto é um material educativo e informativo sobre alimentação saudável. Os resultados podem variar de pessoa para pessoa.
+        As informações contidas neste material não substituem o acompanhamento de um profissional de saúde.
+        &copy; <span id="footer-year">2024</span> 150 Receitas Fit. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+  'use strict';
+
+  /* ================================================================
+     CONFIGURAÇÃO — edite apenas este bloco!
+     ================================================================ */
+  var CHECKOUT_URL   = '#';              // 🔴 Troque pelo seu link de checkout real
+  var PRODUCT_NAME   = '150 Receitas Fit';
+  var COUNTDOWN_MINS = 15;              // Minutos do contador de urgência
+  var VAGAS_INICIAL  = 23;             // Número inicial de vagas
+  var VAGAS_MIN      = 9;              // Mínimo de vagas exibido
+
+  /* ----------------------------------------------------------------
+     Aplica checkout URL nos CTAs
+     ---------------------------------------------------------------- */
+  document.querySelectorAll('#cta-hero, #cta-oferta').forEach(function(el) {
+    el.setAttribute('href', CHECKOUT_URL);
+  });
+
+  /* ----------------------------------------------------------------
+     Ano do rodapé
+     ---------------------------------------------------------------- */
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  /* ----------------------------------------------------------------
+     Banner — padding-top dinâmico
+     ---------------------------------------------------------------- */
+  (function() {
+    var banner = document.getElementById('urgency-banner');
+    if (!banner) return;
+    function update() {
+      var h = banner.offsetHeight;
+      document.documentElement.style.setProperty('--banner-h', h + 'px');
+      document.body.style.paddingTop = h + 'px';
+    }
+    update();
+    window.addEventListener('resize', update);
+  })();
+
+  /* ----------------------------------------------------------------
+     Contador regressivo com localStorage
+     ---------------------------------------------------------------- */
+  (function() {
+    var STORAGE_KEY = 'rcf_countdown_end';
+    var DURATION    = COUNTDOWN_MINS * 60;
+    var endTime;
+
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) {
+        endTime = parseInt(stored, 10);
+        if (Date.now() >= endTime) throw new Error('expired');
+      } else {
+        throw new Error('no entry');
+      }
+    } catch (e) {
+      endTime = Date.now() + DURATION * 1000;
+      try { localStorage.setItem(STORAGE_KEY, endTime); } catch (_) {}
+    }
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function tick() {
+      var remaining = Math.max(0, Math.floor((endTime - Date.now()) / 1000));
+      var m = Math.floor(remaining / 60);
+      var s = remaining % 60;
+      var str = pad(m) + ':' + pad(s);
+      ['countdown', 'countdown2'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = str;
+      });
+      if (remaining <= 0) {
+        endTime = Date.now() + DURATION * 1000;
+        try { localStorage.setItem(STORAGE_KEY, endTime); } catch (_) {}
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
+  /* ----------------------------------------------------------------
+     Vagas — diminui aleatoriamente
+     ---------------------------------------------------------------- */
+  (function() {
+    var el = document.getElementById('vagas');
+    if (!el) return;
+    var current = VAGAS_INICIAL;
+    el.textContent = current;
+    function maybe() {
+      if (current > VAGAS_MIN && Math.random() < 0.35) {
+        current--;
+        el.textContent = current;
+      }
+      setTimeout(maybe, (120 + Math.random() * 180) * 1000);
+    }
+    setTimeout(maybe, (30 + Math.random() * 60) * 1000);
+  })();
+
+  /* ----------------------------------------------------------------
+     Scroll reveal — IntersectionObserver
+     ---------------------------------------------------------------- */
+  (function() {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('visible'); });
+      return;
+    }
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+  })();
+
+  /* ----------------------------------------------------------------
+     FAQ Acordeão
+     ---------------------------------------------------------------- */
+  (function() {
+    document.querySelectorAll('.faq-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var body   = btn.nextElementSibling;
+        var icon   = btn.querySelector('.faq-icon');
+        var isOpen = body.classList.contains('open');
+        // Fecha todos
+        document.querySelectorAll('.faq-body.open').forEach(function(b) {
+          b.classList.remove('open');
+          b.previousElementSibling.setAttribute('aria-expanded', 'false');
+          b.previousElementSibling.querySelector('.faq-icon').classList.remove('rotated');
+        });
+        // Abre o clicado
+        if (!isOpen) {
+          body.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          icon.classList.add('rotated');
+        }
+      });
+    });
+  })();
+
+  /* ----------------------------------------------------------------
+     Toast — notificações de prova social
+     ---------------------------------------------------------------- */
+  (function() {
+    /* EDITE: nomes e cidades das notificações aqui */
+    var buyers = [
+      { name: 'Maria Silva',        city: 'São Paulo, SP',        init: 'M' },
+      { name: 'Ana Paula Ferreira', city: 'Rio de Janeiro, RJ',   init: 'A' },
+      { name: 'Juliana Mendes',     city: 'Belo Horizonte, MG',   init: 'J' },
+      { name: 'Fernanda Costa',     city: 'Curitiba, PR',         init: 'F' },
+      { name: 'Camila Rocha',       city: 'Porto Alegre, RS',     init: 'C' },
+      { name: 'Patrícia Oliveira',  city: 'Salvador, BA',         init: 'P' },
+      { name: 'Luciana Santos',     city: 'Manaus, AM',           init: 'L' },
+      { name: 'Aline Pereira',      city: 'Recife, PE',           init: 'A' },
+      { name: 'Renata Lima',        city: 'Fortaleza, CE',        init: 'R' },
+      { name: 'Beatriz Alves',      city: 'Brasília, DF',         init: 'B' },
+      { name: 'Carla Souza',        city: 'Florianópolis, SC',    init: 'C' },
+      { name: 'Mariana Gomes',      city: 'Goiânia, GO',          init: 'M' },
+    ];
+    var times   = ['há 1 minuto', 'há 2 minutos', 'há 3 minutos', 'há 5 minutos', 'há 7 minutos'];
+    var toastEl = document.getElementById('toast');
+    var showing = false;
+    var shuffled = buyers.slice().sort(function() { return Math.random() - 0.5; });
+    var idx = 0;
+
+    function nextBuyer() {
+      var b = shuffled[idx % shuffled.length];
+      idx++;
+      if (idx % shuffled.length === 0) {
+        shuffled = buyers.slice().sort(function() { return Math.random() - 0.5; });
+      }
+      return b;
+    }
+
+    function showToast() {
+      if (showing) return;
+      showing = true;
+      var b    = nextBuyer();
+      var time = times[Math.floor(Math.random() * times.length)];
+
+      toastEl.innerHTML = [
+        '<div class="glass rounded-2xl shadow-2xl p-3 flex items-start gap-3"',
+        '     style="animation:toastIn 0.4s ease forwards">',
+        '  <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;',
+        '       background:#FF6B35;display:flex;align-items:center;justify-content:center;',
+        '       color:white;font-family:Poppins,sans-serif;font-weight:700;font-size:14px">',
+        b.init,
+        '  </div>',
+        '  <div style="flex:1;min-width:0">',
+        '    <p style="font-size:12px;font-family:Poppins,sans-serif;font-weight:600;color:#1A1A1A;line-height:1.3">' + b.name + '</p>',
+        '    <p style="font-size:11px;color:#5C5C5C">' + b.city + '</p>',
+        '    <p style="font-size:12px;color:#1A1A1A;margin-top:2px">acabou de comprar <strong>' + PRODUCT_NAME + '</strong></p>',
+        '    <p style="font-size:11px;color:#FF6B35">' + time + '</p>',
+        '  </div>',
+        '  <button onclick="(function(){var t=document.getElementById(\'toast\');t.innerHTML=\'\';window._rcfToastShowing=false;})();"',
+        '          aria-label="Fechar notificação"',
+        '          style="flex-shrink:0;background:none;border:none;color:#9CA3AF;font-size:20px;',
+        '                 font-weight:700;cursor:pointer;padding:0 4px;line-height:1">×</button>',
+        '</div>',
+      ].join('');
+      window._rcfToastShowing = true;
+
+      setTimeout(function() {
+        var inner = toastEl.firstElementChild;
+        if (!inner) { showing = false; return; }
+        inner.style.animation = 'toastOut 0.4s ease forwards';
+        setTimeout(function() { toastEl.innerHTML = ''; showing = false; window._rcfToastShowing = false; }, 420);
+      }, 4000);
+    }
+
+    // Inicia após 5s, ciclo de ~12s
+    setTimeout(function loop() {
+      if (!window._rcfToastShowing) showToast();
+      setTimeout(loop, (8 + Math.random() * 4) * 1000 + 4500);
+    }, 5000);
+  })();
+
+  /* ----------------------------------------------------------------
+     Scroll suave para âncoras (reforço para Safari antigo)
+     ---------------------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var href = a.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        var bannerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--banner-h')) || 56;
+        var y = target.getBoundingClientRect().top + window.pageYOffset - bannerH - 8;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  </script>
+
+</body>
+</html>
